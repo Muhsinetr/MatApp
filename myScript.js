@@ -6,64 +6,7 @@ let feildest = document.querySelector(".feildestplace");
 let hidd = document.querySelector(".wraper");
 let histit = document.querySelector(".hissec");
 let hist = document.querySelector(".hiswrap");
-let historyAraay = [
-    {
-        "heightM": "15",
-        "widthM": "10",
-        "heightunit": "feet",
-        "widthunit": "feet",
-        "squrefeet": "1005.00",
-        "unitprice": "12",
-        "amount": "12060",
-        "Date": "17/08/2024"
-    },{
-        "heightM": "10",
-        "widthM": "66",
-        "heightunit": "feet",
-        "widthunit": "inch",
-        "squrefeet": "1005.00",
-        "unitprice": "12",
-        "amount": "12060",
-        "Date": "18/08/2024"
-    },{
-        "heightM": "15",
-        "widthM": "1",
-        "heightunit": "feet",
-        "widthunit": "meter",
-        "squrefeet": "49.21",
-        "unitprice": "50",
-        "amount": "2461",
-        "Date": "16/08/2024"
-    },
-    {
-        "heightM": "15",
-        "widthM": "10",
-        "heightunit": "feet",
-        "widthunit": "feet",
-        "squrefeet": "1005.00",
-        "unitprice": "12",
-        "amount": "12060",
-        "Date": "18/08/2024"
-    },{
-        "heightM": "10",
-        "widthM": "66",
-        "heightunit": "feet",
-        "widthunit": "inch",
-        "squrefeet": "1005.00",
-        "unitprice": "12",
-        "amount": "12060",
-        "Date": "15/08/2024"
-    },{
-        "heightM": "15",
-        "widthM": "1",
-        "heightunit": "feet",
-        "widthunit": "meter",
-        "squrefeet": "49.21",
-        "unitprice": "50",
-        "amount": "2461",
-        "Date": "15/08/2024"
-    }
-];
+let historyAraay = [];
 
 let newtoday = new Date().toISOString().slice(0, 10);
 let sliceDay = newtoday.split("-");
@@ -75,7 +18,7 @@ function claculatResult() {
   let heightLength = document.getElementById("heightlength").value;
   let widthLength = document.getElementById("widthlength").value;
   let priceOfMat = document.getElementById("Price").value;
-
+if(heightOfMat && widthOfMat){
   if (heightLength == "feet") {
     switch (widthLength) {
       case "feet":
@@ -115,11 +58,12 @@ function claculatResult() {
     }
   }
   ttlprice = sqOfMat * priceOfMat;
-  console.log(sqOfMat.toFixed(2));
   sqmt.innerText = sqOfMat.toFixed(2);
-  console.log(ttlprice.toFixed(0));
   tprc.innerText = ttlprice.toFixed(0);
   saveHistory(heightOfMat, widthOfMat, heightLength, widthLength, priceOfMat);
+  setlocal();
+  
+}
 }
 
 function saveHistory(
@@ -134,7 +78,7 @@ function saveHistory(
     "widthM": widthOfMat,
     "heightunit": heightLength,
     "widthunit": widthLength,
-    "squrefeet": sqOfMat.toFixed(2),
+    "squrefeet": sqOfMat.toFixed(1),
     "unitprice": priceOfMat,
     "amount": ttlprice.toFixed(0),
     "Date": today,
@@ -163,10 +107,11 @@ function recentCheck() {
 
 
 function addHistory(){
+  histit.innerHTML = "";
     let sortedDArray = dateSort();
     sortedDArray.forEach((date)=>{
         let eachDate = `<fieldset><legend>${date}</legend>`;
-        historyAraay.forEach((val)=>{
+        historyAraay.slice().reverse().forEach((val)=>{
             if(val.Date == date){
         let dateData = `<div class="matdatas">
         <p>Height &nbsp&nbsp&nbsp&nbsp:&nbsp ${val.heightM} ${val.heightunit}</p>
@@ -203,3 +148,26 @@ function goBack(){
     hidd.style.display = "block";
     hist.style.display = "none";
 }
+
+function setlocal() {
+  let localSave = JSON.stringify(historyAraay);
+  localStorage.setItem("PastCheck", localSave);
+}
+
+function callLocalstroage() {
+  if (localStorage.getItem("PastCheck")) {
+    let lget = localStorage.getItem("PastCheck");
+    historyAraay = JSON.parse(lget);
+    recentCheck();
+  }
+  
+}
+callLocalstroage();
+function clearLocal() {
+  let msg = prompt('Please enter "ok" to clear all History', "");
+  if (msg == "ok") {
+    historyAraay = [];
+    setlocal();
+    addHistory();
+  }
+};
