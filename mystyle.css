@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    min-height: 100dvh;
+    max-height: 100dvh;
     display: flex;
     justify-content: center;
 }
@@ -40,11 +40,11 @@ body{
 
 }
 .inputsec > div > div:nth-child(1){
-    width: 25%;
+    width: 26%;
     padding: 10px;
 }
 .inputsec > div:nth-child(4) > div:nth-child(1){
-    width: 30%;
+    width: 38%;
 }
 .inputsec > div input{
     height: 25px;
