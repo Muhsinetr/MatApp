@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css" >
+</head>
+<body>
+    <div class="wraper">
+        <div class="inputsec">
+            <div class="hgtDiv">
+                <div>Length : </div>
+                <div><input type="number" id="Length" placeholder="Length of mat"></div>
+                <div>
+                    <select name="" id="heightlength">
+                        <option value="feet">Feet</option>
+                        <option value="inch">Inch</option>
+                        <option value="meter">Meter</option>
+                    </select>
+                </div>
+            </div>
+            <div class="wgtDiv">
+                <div>Width : </div>
+                <div><input type="number" id="width" placeholder="Width of mat"></div>
+                <div>
+                    <select name="" id="widthlength">
+                        <option value="feet">Feet</option>
+                        <option value="inch">Inch</option>
+                        <option value="meter">Meter</option>
+                    </select>
+                </div>
+            </div>
+            <div class="prcDiv">
+                <div>Price : </div>
+                <div><input type="number" id="Price" placeholder="Price of mat"></div>
+            </div>
+            <div class="sqDiv">
+                <div>Squre feet :</div>
+                <div><p id="ttlsq">00.0</p></div>
+            </div>
+            <div class="przDiv">
+                <div>Price :</div>
+                <div><p id="ttlprc">00</p></div>
+            </div>
+            <div>
+                <button onclick="claculatResult()">Check </button>
+            </div>
+        </div>
+        <div class="Recent">
+        <fieldset>
+            <legend>Recent checks</legend>
+            <button onclick="goHistory()">History</button>
+            <div class="feildestplace">
+            <!-- <div class="checks">
+                <p>Height &nbsp&nbsp&nbsp&nbsp: &nbsp 4 feet</p>
+                <p>Width  &nbsp&nbsp&nbsp&nbsp : &nbsp 3 feet</p>
+                <p>Squre feet :&nbsp 360.5</p>
+                <p>Unit price :&nbsp 360.5</p>
+                <p>Price &nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp 3500/-</p>
+            </div> -->
+        
+        </div>
+        </fieldset>
+        </div>
+        </div>
+        
+        <!-- history section -->
+        <div class="hiswrap">
+            <div class="backbtn" onclick="goBack()">
+                <div></div>
+            </div>
+            <div class="clrbtn">
+                <div></div>
+            </div>
+        <div class="hissec">
+            <!-- <fieldset>
+                <legend>13/05/2020</legend>
+                <div class="matdatas">
+                <p>Height &nbsp&nbsp&nbsp&nbsp: &nbsp 4 feet</p>
+                <p>Width  &nbsp&nbsp&nbsp&nbsp : &nbsp 3 feet</p>
+                <p>Squre feet :&nbsp 360.5</p>
+                <p>Unit price :&nbsp 360.5</p>
+                <p>Price &nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp 3500/-</p>
+                </div>
+                <div class="matdatas">
+                    <p>Height &nbsp&nbsp&nbsp&nbsp: &nbsp 4 feet</p>
+                    <p>Width  &nbsp&nbsp&nbsp&nbsp : &nbsp 3 feet</p>
+                    <p>Squre feet :&nbsp 360.5</p>
+                    <p>Unit price :&nbsp 360.5</p>
+                    <p>Price &nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp 3500/-</p>
+                    </div>
+            </fieldset> -->
+            
+        </div>
+        </div>
+        <div class="add">
+        <p >Developed by : Muhsin vemmully</p>
+    </div>
+        <script src="myScript.js"></script>
+</body>
+</html>

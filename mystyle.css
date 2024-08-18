@@ -1,0 +1,160 @@
+*{
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+}
+.add{
+    position: absolute;
+    bottom: 4px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.wraper{
+    width: 350px;
+    height: 95dvh; 
+}
+.inputsec{
+    width: 100%;
+    height: 250px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 1px;
+}
+.inputsec > div{
+    height: 45px;
+    width: 95%;
+    display: flex;
+
+}
+.inputsec > div > div{
+    display: flex;
+    align-items: center;
+
+}
+.inputsec > div > div:nth-child(1){
+    width: 25%;
+    padding: 10px;
+}
+.inputsec > div:nth-child(4) > div:nth-child(1){
+    width: 30%;
+}
+.inputsec > div input{
+    height: 25px;
+    width: 150px;
+    border-color: #FF9800;
+    padding-left: 5px;
+}
+.inputsec > div select{
+    margin-left: 15px;
+    height: 25px;
+    width: 62px;
+    color: white;
+    background-color: #283593;
+}
+.inputsec > div:nth-child(6){
+    justify-content: center;
+    align-items: center;
+}
+.inputsec > div:nth-child(6) button{
+    width: 100px;
+    border-radius: 10px;
+    height: 28px;
+}
+.inputsec > div:nth-child(6) button:active{
+    font-size: 10px;
+    color: beige;
+    background-color: rgb(73, 72, 72);
+}
+.wraper fieldset{
+    height: 60dvh;
+    position: relative;
+}
+.feildestplace{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+.feildestplace::-webkit-scrollbar{
+    display: none;
+}
+.wraper legend{
+    margin: 1px 20px;
+    padding: 3px 5px;
+    border: 1px solid #898686;
+}
+.wraper fieldset button{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    padding: 3px;
+}
+.checks,.matdatas{
+    border: 1px dotted black;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 1px;
+    font-family: monospace;
+}
+.hiswrap{
+    display: none;
+    position: relative;
+}
+.hissec{
+    width: 350px;
+    border: 1px solid rgb(179 173 173);
+    height: 95dvh;
+    overflow: scroll;
+}
+.hissec fieldset{
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+.hissec fieldset legend{
+    margin: 0px 20px;
+    padding: 6px 5px;
+}
+.hissec::-webkit-scrollbar{
+    display: none;
+}
+.backbtn{
+    position: absolute;
+    left: 4px;
+    border-radius: 50%;
+}
+.backbtn div{
+    background-image: url(back.png);
+    height: 25px;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.backbtn div:active{
+    height: 20px;
+}
+.clrbtn{
+    position: absolute;
+    bottom: 10px;
+    right: 13px;
+}
+.clrbtn div{
+    background-image: url(delete.png);
+    height: 30px;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.clrbtn div:active{
+    height: 25px;
+}
