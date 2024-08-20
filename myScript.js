@@ -109,7 +109,7 @@ function recentCheck() {
 function addHistory(){
   histit.innerHTML = "";
     let sortedDArray = dateSort();
-    sortedDArray.forEach((date)=>{
+    sortedDArray.slice().reverse().forEach((date)=>{
         let eachDate = `<fieldset><legend>${date}</legend>`;
         historyAraay.slice().reverse().forEach((val)=>{
             if(val.Date == date){
